@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApp.HomeScreen"
+  Title ="Souq Mobile App">
+  <Grid Padding="20" ColumnSpacing="10" RowSpacing="20">
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto"/>
+      <RowDefinition Height="auto"/>
+      <RowDefinition Height="auto"/>
+      <RowDefinition Height="auto"/>
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    
+
+    <Button x:Name="btnPosScrn"
+            Grid.Row="1"
+            Grid.Column="0"
+     Clicked="OnButtonClicked"
+     Text = "Pos Screen "
+     TextColor="White"
+     BackgroundColor="Blue" />
+
+    <Button x:Name="btnCashier"
+            Grid.Row="1"
+            Grid.Column="1"
+    Text = "Cashier Login "
+    TextColor="White"
+    BackgroundColor="Blue" />
+
+    <Button x:Name="btnRegCustomer"
+            Grid.Row="2"
+            Grid.Column="0"
+    Text = "Register New Customer "
+    TextColor="White"
+    BackgroundColor="Blue" />
+
+  </Grid>
+</ContentPage>
