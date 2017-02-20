@@ -5,8 +5,10 @@
   Title="Your Reciept " BackgroundColor="Gray">
   <StackLayout Padding="40,20,20,20" VerticalOptions="Center" HorizontalOptions="Center">
   
-  <Grid Padding="40,20,20,20" ColumnSpacing="10" RowSpacing="20" BackgroundColor="White" >
+  <Grid Padding="40,20,20,20" ColumnSpacing="10" RowSpacing="20" BackgroundColor="White" 
+        Height="100%" VerticalOptions="FillAndExpand">
     <Grid.RowDefinitions>
+      <RowDefinition Height="auto"/>
       <RowDefinition Height="auto"/>
       <RowDefinition Height="auto"/>
       <RowDefinition Height="auto"/>
@@ -27,12 +29,17 @@
           Grid.Column="0" Grid.ColumnSpan="2"
          Grid.Row="0" 
       BackgroundColor="White" TextColor="Black" FontAttributes="Bold"></Label>
-    
-  <Label x:Name="itemsNAme_lbl" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-        Grid.Column="0" 
+
+    <Entry
+  x:Name="itemsNAme_lbl"
+  IsEnabled="False"
+  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+          Grid.Column="0" 
          Grid.Row="1" Grid.RowSpan="5"
          BackgroundColor="White" TextColor="Black"
-         ></Label>
+  ></Entry>
+    
+
 
     <Label x:Name="itemsPrice_lbl"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
       Grid.Column="1"
@@ -44,8 +51,12 @@
     <Label x:Name="total_lb" Grid.Column="0" Grid.Row="8" Text="Total : " FontAttributes="Bold"
          BackgroundColor="White" TextColor="Black"
         ></Label>
-    <Label x:Name="totalValue_lbl" Grid.Column="1" Grid.Row="8" Text="5000" HorizontalOptions="CenterAndExpand"
+    <Label x:Name="totalValue_lbl" Grid.Column="1" Grid.Row="8"  HorizontalOptions="CenterAndExpand"
             BackgroundColor="White" TextColor="Black"></Label>
+
+    <Label x:Name="CashierName_lbl" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"
+          Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="9"
+      BackgroundColor="White" TextColor="Black" FontAttributes="Bold"></Label>
     
   </Grid>
     <Button x:Name="Done" 

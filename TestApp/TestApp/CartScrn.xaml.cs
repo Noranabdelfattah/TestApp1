@@ -20,6 +20,7 @@ namespace TestApp
             totalValue_lbl.Text = ItemsPage.getTotal().ToString();
 
             CustomerName_lbl.Text = "Customer Name : "+CustomersPage.getCustomer();
+            CashierName_lbl.Text="Cashier Name : "+ LoginPage.GetLoginName();
         }
       
 

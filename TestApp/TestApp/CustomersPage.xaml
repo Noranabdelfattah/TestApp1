@@ -8,7 +8,7 @@
       <ListView.ItemTemplate  >
         <DataTemplate >
           <ViewCell>
-            <StackLayout Orientation="Vertical" >
+            <StackLayout Orientation="Vertical" Padding="30,30,20,20" >
              
               <Label Text = "{Binding Name}" FontSize="16" TextColor="Maroon" FontAttributes="Bold"  />
          

@@ -21,11 +21,11 @@
 
     <Button x:Name="addToCart"
      Clicked="addToCartClicked"
-     Text = "Add To Cart "
+     Text = "Check OUT "
      TextColor="White"
      BackgroundColor="Blue"
-      HorizontalOptions="End"
-     VerticalOptions="End"
+      HorizontalOptions="CenterAndExpand"
+     VerticalOptions="CenterAndExpand"
 />
 
 

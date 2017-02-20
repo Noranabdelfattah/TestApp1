@@ -4,44 +4,47 @@
              x:Class="TestApp.HomeScreen"
   Title ="Souq Mobile App">
     <StackLayout  >
-   
+      <Label x:Name="lbl1" FontSize="20" VerticalOptions="Start" HorizontalOptions="Start"></Label> 
 <Grid Padding="20" ColumnSpacing="10" RowSpacing="20">
 
     <Grid.RowDefinitions>
       <RowDefinition Height="auto"/>
       <RowDefinition Height="auto"/>
-     
+      <RowDefinition Height="auto"/>
     </Grid.RowDefinitions>
 
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="*"/>
       <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
-    
-    <Button x:Name="btnPosScrn"
-            Grid.Row="0"
-            Grid.Column="0"
-     Clicked="POS_btn_Click"
-     Text = "Pos Screen "
-     TextColor="White"
-     BackgroundColor="Blue" />
 
-    <Button x:Name="btnCashier"
-            Grid.Row="0"
-            Grid.Column="1"
-    Text = "Cashier Login "
-    TextColor="White"
-    BackgroundColor="Blue" />
+
+  <Button x:Name="btnCashier"
+          Grid.Row="0"
+          Grid.Column="0"
+          Clicked="BtnCashier_OnClicked"
+  Text = "Cashier Login "
+  TextColor="White"
+  BackgroundColor="Blue" />
+  
 
     <Button x:Name="btnRegCustomer"
             Grid.Row="1"
             Grid.Column="0"
-            Grid.ColumnSpan="2"
+        
     Clicked="BtnRegCustomer_OnClicked" 
     Text = "Select Customer "
     TextColor="White"
     BackgroundColor="Blue"
-  HorizontalOptions="Fill"/>
+      />
+  
+  <Button x:Name="btnPosScrn"
+        Grid.Row="2"
+        Grid.Column="0"
+ Clicked="POS_btn_Click"
+ Text = "Pos Screen "
+ TextColor="White"
+ BackgroundColor="Blue" />
 
   </Grid>
 </StackLayout>

@@ -13,6 +13,7 @@ namespace TestApp
         public HomeScreen()
         {
             InitializeComponent();
+            lbl1.Text = LoginPage.GetLoginName();
         }
 
         private async void POS_btn_Click(object sender, EventArgs e)
@@ -24,5 +25,11 @@ namespace TestApp
         {
           await  Navigation.PushModalAsync(new CustomersPage());
         }
+
+        private async void BtnCashier_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new LoginPage());
+        }
+
     }
 }
