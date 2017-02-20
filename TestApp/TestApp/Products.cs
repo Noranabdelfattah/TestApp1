@@ -9,7 +9,7 @@ namespace TestApp
     public class Products
     {
         public string Name { get; set; }
-        public string Price { get; set; }
+        public int Price { get; set; }
 
 
 
@@ -20,29 +20,65 @@ namespace TestApp
             new Products
             {
                 Name = "Cake",
-                Price = "10",
+                Price = 10,
 
             },
             new Products
             {
                 Name = "Pepsi",
-                Price = "20",
+                Price = 20,
 
             },
             new Products
             {
                 Name = "Orange",
-                Price = "30",
+                Price = 30,
 
             },
 
             new Products
             {
                 Name = "LightBulb",
-                Price = "40",
+                Price = 40,
+
+            },
+             new Products
+            {
+                Name = "Torch",
+                Price = 10,
+
+            },
+            new Products
+            {
+                Name = "Vacum Cleaner",
+                Price = 20,
+
+            },
+              new Products
+            {
+                Name = "T-shirt",
+                Price = 10,
+
+            },
+            new Products
+            {
+                Name = "Jacket",
+                Price = 20,
+
+            },
+            new Products
+            {
+                Name = "Skirt",
+                Price = 30,
+
+            },
+
+            new Products
+            {
+                Name = "Dress",
+                Price = 40,
 
             }
-
         };
         }
 
@@ -53,13 +89,13 @@ namespace TestApp
             new Products
             {
                 Name = "Torch",
-                Price = "10",
+                Price = 10,
 
             },
             new Products
             {
                 Name = "Vacum Cleaner",
-                Price = "20",
+                Price = 20,
 
             },
          
@@ -67,7 +103,7 @@ namespace TestApp
             new Products
             {
                 Name = "LightBulb",
-                Price = "40",
+                Price = 40,
 
             }
 
@@ -81,19 +117,19 @@ namespace TestApp
             new Products
             {
                 Name = "Cake",
-                Price = "10",
+                Price = 10,
 
             },
             new Products
             {
                 Name = "Pepsi",
-                Price = "20",
+                Price = 20,
 
             },
             new Products
             {
                 Name = "Orange",
-                Price = "30",
+                Price = 30,
 
             }
         };
@@ -106,26 +142,26 @@ namespace TestApp
             new Products
             {
                 Name = "T-shirt",
-                Price = "10",
+                Price = 10,
 
             },
             new Products
             {
                 Name = "Jacket",
-                Price = "20",
+                Price = 20,
 
             },
             new Products
             {
                 Name = "Skirt",
-                Price = "30",
+                Price = 30,
 
             },
 
             new Products
             {
                 Name = "Dress",
-                Price = "40",
+                Price = 40,
 
             }
 

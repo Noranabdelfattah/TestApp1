@@ -11,7 +11,10 @@ namespace TestApp
     public partial class ItemsPage : ContentPage
     {
         private static IList<Products> returned_products_list;
-        static String purchasedList = " ";
+        static string purchasedList = " ";
+        private static string itemPrice="";
+        private static float total =0;
+
         public ItemsPage()
     {
             InitializeComponent();
@@ -45,13 +48,15 @@ namespace TestApp
 
         private async void addToCartClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CartScrn());
+            await Navigation.PushModalAsync(new CartScrn());
         }
 
         public static void clearpurchaseditems()
         {
 
             purchasedList = " ";
+            itemPrice = "";
+            total = 0;
 
         }
 
@@ -60,12 +65,27 @@ namespace TestApp
 
             return purchasedList;
         }
+        public static String getitemPrice()
+        {
+
+            return itemPrice;
+        }
+        public static float getTotal()
+        {
+
+            return total;
+        }
 
         private async void LstView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             await DisplayAlert("Selected", ((Products)(e.SelectedItem)).Name + " was selected.", "OK");
 
-            purchasedList = purchasedList + ((Products)(e.SelectedItem)).Name + " , ";
+            purchasedList = purchasedList + ((Products)(e.SelectedItem)).Name + "\r\n";
+            itemPrice=itemPrice+( ((Products)(e.SelectedItem)).Price.ToString()) + "\r\n";
+            total = total + ((Products) (e.SelectedItem)).Price;
+
+   
+
         }
     }
 }

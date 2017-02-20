@@ -8,8 +8,7 @@
   <MasterDetailPage.Master>
     <ContentPage Title="Menu">
       <StackLayout Orientation="Vertical" Padding="45,45,50,30" BackgroundColor="Black">
-       
-        <Label x:Name="CustomerName_lbl"></Label>
+      
         <Button Text="Home Electronics" Clicked="HomeElec_btn" TextColor="Black" BackgroundColor="Orange"/>
         <Button Text="Food" Clicked="Food_btn" TextColor="Black" BackgroundColor="Orange"/>
         <Button Text="Clothes" Clicked="Clothes_btn" TextColor="Black" BackgroundColor="Orange"/>

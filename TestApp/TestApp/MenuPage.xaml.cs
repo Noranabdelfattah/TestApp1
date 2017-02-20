@@ -15,7 +15,7 @@ namespace TestApp
         public MenuPage()
         {
             InitializeComponent();
-           CustomerName_lbl.Text = "Customer Name :"+obj.getCustomer();
+      
         }
 
         private void HomeElec_btn(object sender, EventArgs e)

@@ -10,7 +10,7 @@ namespace TestApp
 { 
     public partial class CustomersPage : ContentPage
     {
-        private Customers selectedCustomer;
+        private static  Customers selectedCustomer;
 
         public CustomersPage()
         {
@@ -26,17 +26,22 @@ namespace TestApp
 
         }
 
-        public string getCustomer()
+        public static string getCustomer()
         {
             return selectedCustomer.Name;
         }
 
+        public static void clearCustomer()
+        {
+            selectedCustomer = null;
+        }
         private async void LstView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            await DisplayAlert("Selected", ((Customers)(e.SelectedItem)).Name + " was selected.", "OK");
-                setCustomer((Customers)(e.SelectedItem));
-            await DisplayAlert("Navigating to POS ...", "Now you will be moved to the pos screen to start selling to"+((Customers)(e.SelectedItem)).Name , "OK");
-          await  Navigation.PushModalAsync(new MenuPage());
+            await DisplayAlert("Navigating to POS ...", "Now you will be moved to the pos screen to start selling to "+((Customers)(e.SelectedItem)).Name , "OK");
+            setCustomer((Customers)(e.SelectedItem));
+            await  Navigation.PushModalAsync(new MenuPage());
+      
+  
         }
     }
 }

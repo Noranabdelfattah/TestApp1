@@ -3,15 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TestApp.HomeScreen"
   Title ="Souq Mobile App">
-    <StackLayout>
+    <StackLayout  >
    
 <Grid Padding="20" ColumnSpacing="10" RowSpacing="20">
 
     <Grid.RowDefinitions>
       <RowDefinition Height="auto"/>
       <RowDefinition Height="auto"/>
-      <RowDefinition Height="auto"/>
-      <RowDefinition Height="auto"/>
+     
     </Grid.RowDefinitions>
 
     <Grid.ColumnDefinitions>
@@ -20,7 +19,7 @@
     </Grid.ColumnDefinitions>
     
     <Button x:Name="btnPosScrn"
-            Grid.Row="1"
+            Grid.Row="0"
             Grid.Column="0"
      Clicked="POS_btn_Click"
      Text = "Pos Screen "
@@ -28,19 +27,21 @@
      BackgroundColor="Blue" />
 
     <Button x:Name="btnCashier"
-            Grid.Row="1"
+            Grid.Row="0"
             Grid.Column="1"
     Text = "Cashier Login "
     TextColor="White"
     BackgroundColor="Blue" />
 
     <Button x:Name="btnRegCustomer"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="0"
+            Grid.ColumnSpan="2"
+    Clicked="BtnRegCustomer_OnClicked" 
     Text = "Select Customer "
-           Clicked="BtnRegCustomer_OnClicked" 
     TextColor="White"
-    BackgroundColor="Blue" />
+    BackgroundColor="Blue"
+  HorizontalOptions="Fill"/>
 
   </Grid>
 </StackLayout>

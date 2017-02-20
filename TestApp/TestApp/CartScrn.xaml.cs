@@ -15,14 +15,20 @@ namespace TestApp
        
             InitializeComponent();
 
-            lablView.Text = ItemsPage.getpurchaseditems();
-        }
+            itemsNAme_lbl.Text = ItemsPage.getpurchaseditems();
+            itemsPrice_lbl.Text = ItemsPage.getitemPrice();
+            totalValue_lbl.Text = ItemsPage.getTotal().ToString();
 
+            CustomerName_lbl.Text = "Customer Name : "+CustomersPage.getCustomer();
+        }
+      
 
         private async void Done_OnClicked(object sender, EventArgs e)
         {
             ItemsPage.clearpurchaseditems();
-            await Navigation.PopToRootAsync();
+            CustomersPage.clearCustomer();
+            await Navigation.PopModalAsync();
+
 
         }
     }
