@@ -15,9 +15,14 @@ namespace TestApp
             InitializeComponent();
         }
 
-        private async void OnButtonClicked(object sender, EventArgs e)
+        private async void POS_btn_Click(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new MenuPage());
+        }
+
+        private async void BtnRegCustomer_OnClicked(object sender, EventArgs e)
+        {
+          await  Navigation.PushModalAsync(new CustomersPage());
         }
     }
 }

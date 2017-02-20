@@ -13,26 +13,17 @@ namespace TestApp
         public CartScrn()
         {
        
-            this.Title = "Your Reciept";
-
-            Label lablView = new Label();
+            InitializeComponent();
 
             lablView.Text = ItemsPage.getpurchaseditems();
+        }
 
-            Button Done = new Button();
-            Done.Text = "OK Print The recipt ";
-            Done.Clicked += async (sender, e) => {
+
+        private async void Done_OnClicked(object sender, EventArgs e)
+        {
             ItemsPage.clearpurchaseditems();
-                await Navigation.PopToRootAsync();
+            await Navigation.PopToRootAsync();
 
-            };
-            Content = new StackLayout
-            {
-                Children = {
-                    lablView, Done
-
-                    }
-            };
         }
     }
 }

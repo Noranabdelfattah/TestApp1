@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApp.CustomersPage">
+  <StackLayout Orientation="Vertical" Padding="30,30,20,20">
+    <ListView x:Name="Customer_lstView" RowHeight="60" HasUnevenRows="True"  ItemSelected="LstView_OnItemSelected" >
+      <ListView.ItemTemplate  >
+        <DataTemplate >
+          <ViewCell>
+            <StackLayout Orientation="Vertical" >
+              <Label Text = "{Binding Name}" FontSize="16" TextColor="Maroon" FontAttributes="Bold"  />
+         
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+
+
+</StackLayout>
+</ContentPage>

@@ -5,15 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace TestApp
 {
     public partial class MenuPage : MasterDetailPage
     {
+       CustomersPage obj =new CustomersPage();
         public MenuPage()
         {
             InitializeComponent();
-            
+           CustomerName_lbl.Text = "Customer Name :"+obj.getCustomer();
         }
 
         private void HomeElec_btn(object sender, EventArgs e)
