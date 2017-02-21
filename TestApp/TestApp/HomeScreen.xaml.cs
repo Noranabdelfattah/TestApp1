@@ -13,7 +13,12 @@ namespace TestApp
         public HomeScreen()
         {
             InitializeComponent();
-            lbl1.Text = LoginPage.GetLoginName();
+            CashierName_lbl.Text = "Cashier Name : " + LoginPage.GetLoginName();
+            for (int i = 0; i < Customers.GetAllCustomers().Count; i++)
+            {
+                CustomersPicker.Items.Add(Customers.GetAllCustomers().ElementAt(i).Name);
+            }
+
         }
 
         private async void POS_btn_Click(object sender, EventArgs e)
@@ -31,5 +36,11 @@ namespace TestApp
             await Navigation.PushModalAsync(new LoginPage());
         }
 
+        private void CustomersPicker_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name=CustomersPicker.Items[CustomersPicker.SelectedIndex];
+            DisplayAlert(name, "Selected","OK");
+            CustomersPage.setCustomerName(name);
+        }
     }
 }

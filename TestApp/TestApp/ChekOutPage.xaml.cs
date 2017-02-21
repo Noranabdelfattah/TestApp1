@@ -8,21 +8,22 @@ using Xamarin.Forms;
 
 namespace TestApp
 {
-    public partial class CartScrn : ContentPage
+    public partial class ChekOutPage : ContentPage
     {
-        public CartScrn()
+        public ChekOutPage()
         {
-       
             InitializeComponent();
 
-            itemsNAme_lbl.Text = ItemsPage.getpurchaseditems();
-            itemsPrice_lbl.Text = ItemsPage.getitemPrice();
+            itemsNAme_lbl.ItemsSource = ItemsPage.getpurchaseditems();
+            itemsPrice_lbl.ItemsSource = ItemsPage.getitemPrice();
             totalValue_lbl.Text = ItemsPage.getTotal().ToString();
 
-            CustomerName_lbl.Text = "Customer Name : "+CustomersPage.getCustomer();
-            CashierName_lbl.Text="Cashier Name : "+ LoginPage.GetLoginName();
+            CustomerName_lbl.Text = "Customer Name : " + CustomersPage.getCustomerName();
+              CashierName_lbl.Text = "Cashier Name : " + LoginPage.GetLoginName();
+            //
         }
-      
+
+
 
         private async void Done_OnClicked(object sender, EventArgs e)
         {

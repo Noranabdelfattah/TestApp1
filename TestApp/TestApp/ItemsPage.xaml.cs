@@ -11,10 +11,11 @@ namespace TestApp
     public partial class ItemsPage : ContentPage
     {
         private static IList<Products> returned_products_list;
-        static string purchasedList = " ";
-        private static string itemPrice="";
-        private static float total =0;
 
+        private static IList<string> purchasedList= new List<string>(100);
+        private static IList<string> itemPrice = new List<string>(100);
+        private static int total =0;
+        private int i = 0;
         public ItemsPage()
     {
             InitializeComponent();
@@ -46,31 +47,29 @@ namespace TestApp
                 returned_products_list = Products.GetClothesProducts();
         }
 
-        private async void addToCartClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new CartScrn());
-        }
-
         public static void clearpurchaseditems()
         {
-
-            purchasedList = " ";
-            itemPrice = "";
-            total = 0;
+            for (int j = 0; j < purchasedList.Count; j++)
+            {
+                purchasedList[j]= " ";
+                itemPrice [j] = " ";
+                total = 0;
+            }
+            
 
         }
 
-        public static String getpurchaseditems()
+        public static IList<String> getpurchaseditems()
         {
 
             return purchasedList;
         }
-        public static String getitemPrice()
+        public static IList<String> getitemPrice()
         {
 
             return itemPrice;
         }
-        public static float getTotal()
+        public static int getTotal()
         {
 
             return total;
@@ -79,13 +78,20 @@ namespace TestApp
         private async void LstView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             await DisplayAlert("Selected", ((Products)(e.SelectedItem)).Name + " was selected.", "OK");
+            if (i>=0)
+            {
+                purchasedList.Insert(i,((Products)(e.SelectedItem)).Name); 
+                itemPrice.Insert(i, ((((Products) (e.SelectedItem)).Price)).ToString()) ;
+                total = total + ((Products) (e.SelectedItem)).Price;
 
-            purchasedList = purchasedList + ((Products)(e.SelectedItem)).Name + "\r\n";
-            itemPrice=itemPrice+( ((Products)(e.SelectedItem)).Price.ToString()) + "\r\n";
-            total = total + ((Products) (e.SelectedItem)).Price;
+            }
+            i++;
 
-   
+        }
 
+        private void CheckOutBtn_OnClicked(object sender, EventArgs e)
+        {
+             Navigation.PushModalAsync(new ChekOutPage());
         }
     }
 }

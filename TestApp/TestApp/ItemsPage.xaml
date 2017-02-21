@@ -19,8 +19,8 @@
       </ListView.ItemTemplate>
     </ListView>
 
-    <Button x:Name="addToCart"
-     Clicked="addToCartClicked"
+    <Button x:Name="CheckOutBtn"
+     Clicked="CheckOutBtn_OnClicked"
      Text = "Check OUT "
      TextColor="White"
      BackgroundColor="Blue"

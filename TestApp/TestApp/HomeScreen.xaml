@@ -4,8 +4,15 @@
              x:Class="TestApp.HomeScreen"
   Title ="Souq Mobile App">
     <StackLayout  >
-      <Label x:Name="lbl1" FontSize="20" VerticalOptions="Start" HorizontalOptions="Start"></Label> 
-<Grid Padding="20" ColumnSpacing="10" RowSpacing="20">
+      <Label x:Name="CashierName_lbl"
+             FontSize="20"
+             VerticalOptions="Start"
+             HorizontalOptions="Start"
+             FontAttributes="Bold">
+        
+      </Label> 
+
+      <Grid Padding="20" ColumnSpacing="10" RowSpacing="20">
 
     <Grid.RowDefinitions>
       <RowDefinition Height="auto"/>
@@ -17,18 +24,36 @@
       <ColumnDefinition Width="*"/>
       <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
-
-
-  <Button x:Name="btnCashier"
+  
+<Label Text="Select Customer : " 
+       Grid.Row="0"
+       Grid.Column="0"
+       Grid.ColumnSpan="2"
+       FontAttributes="Bold"
+       FontSize="20"
+       TextColor="Black">
+  
+</Label>
+<Picker x:Name="CustomersPicker" 
+        SelectedIndexChanged="CustomersPicker_OnSelectedIndexChanged"
+         Grid.Row="1"
+         Grid.Column="0"
+    
+         HorizontalOptions="FillAndExpand"
+         VerticalOptions="FillAndExpand">
+  
+</Picker>
+  
+  <!--<Button x:Name="btnCashier"
           Grid.Row="0"
           Grid.Column="0"
           Clicked="BtnCashier_OnClicked"
   Text = "Cashier Login "
   TextColor="White"
-  BackgroundColor="Blue" />
+  BackgroundColor="Blue" />-->
   
 
-    <Button x:Name="btnRegCustomer"
+    <!--<Button x:Name="btnRegCustomer"
             Grid.Row="1"
             Grid.Column="0"
         
@@ -36,16 +61,18 @@
     Text = "Select Customer "
     TextColor="White"
     BackgroundColor="Blue"
-      />
-  
+      />-->
+
   <Button x:Name="btnPosScrn"
         Grid.Row="2"
         Grid.Column="0"
- Clicked="POS_btn_Click"
- Text = "Pos Screen "
- TextColor="White"
- BackgroundColor="Blue" />
+         Clicked="POS_btn_Click"
+         Text = "Pos Screen "
+         TextColor="White"
+         BackgroundColor="Blue"
+        HorizontalOptions="End"
+        VerticalOptions="End"/>
 
-  </Grid>
+</Grid>
 </StackLayout>
 </ContentPage>

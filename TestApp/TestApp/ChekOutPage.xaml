@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApp.ChekOutPage">
+
+  <StackLayout Padding="40,20,20,20" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+
+    <Grid Padding="40,20,20,20" ColumnSpacing="10" RowSpacing="20" BackgroundColor="White"
+      HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+  
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Label x:Name="CustomerName_lbl" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"
+                Grid.Column="0" Grid.ColumnSpan="2"
+               Grid.Row="0"
+            BackgroundColor="White" TextColor="Black" FontAttributes="Bold"></Label>
+
+      <!--<Label x:Name="itemsNAme_lbl"
+       HorizontalOptions="CenterAndExpand" 
+       VerticalOptions="CenterAndExpand"
+       Grid.Column="0"
+           Grid.Row="1" Grid.RowSpan="3"
+           BackgroundColor="White" TextColor="Black"
+  ></Label>
+
+      <Label x:Name="itemsPrice_lbl"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+        Grid.Column="1"
+         Grid.Row="1" Grid.RowSpan="3"
+         BackgroundColor="White" TextColor="Black"
+         ></Label>-->
+
+      <ListView x:Name="itemsNAme_lbl"   Grid.Column="0"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+           Grid.Row="1" Grid.RowSpan="3" >
+        <!--<ListView.ItemTemplate  >
+          <DataTemplate >
+            <ViewCell>
+              <StackLayout Orientation="Vertical" >
+                --><!--<Label Text = "{Binding purchased}" FontSize="16" TextColor="Maroon" FontAttributes="Bold"  />--><!--
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>-->
+      </ListView>
+      
+<ListView x:Name="itemsPrice_lbl"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+        Grid.Column="1"
+         Grid.Row="1" Grid.RowSpan="3"
+         
+  
+  ></ListView>
+
+      <Label x:Name="total_lb" Grid.Column="0" Grid.Row="4" Text="Total : " 
+             FontAttributes="Bold"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+           BackgroundColor="White" TextColor="Black"
+        ></Label>
+      <Label x:Name="totalValue_lbl" Grid.Column="1" Grid.Row="4"  HorizontalOptions="CenterAndExpand"
+              BackgroundColor="White" TextColor="Black"></Label>
+
+      <Label x:Name="CashierName_lbl"  HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"
+            Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="5"
+        BackgroundColor="White" TextColor="Black" FontAttributes="Bold"></Label>
+
+    </Grid>
+
+    <Button x:Name="Done"
+            Text="Print The recipt"
+            Clicked="Done_OnClicked"
+            TextColor="Black"
+            BackgroundColor="Orange"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            />
+
+  </StackLayout>
+</ContentPage>

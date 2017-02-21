@@ -16,7 +16,7 @@ namespace TestApp
 
         public void SetLoginName(string x)
         {
-            loginname = "Welcome : " + x;
+            loginname =  x;
         }
         public static string GetLoginName()
         {

@@ -13,7 +13,7 @@ namespace TestApp
         {
             InitializeComponent();
 
-            MainPage = new HomeScreen();
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()
