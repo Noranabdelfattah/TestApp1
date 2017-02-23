@@ -15,23 +15,22 @@ namespace TestApp
             InitializeComponent();
 
             itemsNAme_lbl.ItemsSource = ItemsPage.getpurchaseditems();
-            itemsPrice_lbl.ItemsSource = ItemsPage.getitemPrice();
+          //  itemsPrice_lbl.ItemsSource = ItemsPage.getitemPrice();
             totalValue_lbl.Text = ItemsPage.getTotal().ToString();
 
             CustomerName_lbl.Text = "Customer Name : " + CustomersPage.getCustomerName();
-              CashierName_lbl.Text = "Cashier Name : " + LoginPage.GetLoginName();
+              CashierName_lbl.Text = "Cashier Name : " + LoginPage.GetLoginName() +"\r\n"+DateTime.Now.ToString();
             //
         }
 
-
+        
 
         private async void Done_OnClicked(object sender, EventArgs e)
         {
             ItemsPage.clearpurchaseditems();
             CustomersPage.clearCustomer();
-            await Navigation.PopModalAsync();
-
-
+  
+          await  Navigation.PopToRootAsync(true);
         }
     }
 }

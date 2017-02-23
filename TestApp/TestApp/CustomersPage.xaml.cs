@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TestApp;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace TestApp
-{ 
+{
     public partial class CustomersPage : ContentPage
     {
         private static  Customers selectedCustomer= new Customers();
+        
 
         public CustomersPage()
         {
@@ -38,15 +33,15 @@ namespace TestApp
 
         public static void clearCustomer()
         {
-            selectedCustomer = null;
+            selectedCustomer.Name = "Default Customer ";
         }
-        private async void LstView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            //await DisplayAlert("Navigating to POS ...", "Now you will be moved to the pos screen to start selling to "+((Customers)(e.SelectedItem)).Name , "OK");
-            //setCustomer(((Customers)(e.SelectedItem)));
-            //await  Navigation.PushModalAsync(new MenuPage());
+        //private async void LstView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        //{
+        //    //await DisplayAlert("Navigating to POS ...", "Now you will be moved to the pos screen to start selling to "+((Customers)(e.SelectedItem)).Name , "OK");
+        //    //setCustomer(((Customers)(e.SelectedItem)));
+        //    //await  Navigation.PushModalAsync(new MenuPage());
       
   
-        }
+        //}
     }
 }

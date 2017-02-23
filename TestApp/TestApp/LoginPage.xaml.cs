@@ -12,6 +12,7 @@ namespace TestApp
         public LoginPage()
         {
             InitializeComponent();
+
         }
 
         public void SetLoginName(string x)
@@ -25,9 +26,10 @@ namespace TestApp
 
         private void SignIn_btn(object sender, EventArgs e)
         {
+            
             SetLoginName(NameEntry.Text);
             DisplayAlert("Welcome ", "Welcome our Employee You Loged in Succsesfully Let's Start the Shift !", "Let's Go");
-            Navigation.PushModalAsync(new HomeScreen());
+            Navigation.PushAsync(new HomeScreen());
         }
     }
 }

@@ -13,7 +13,7 @@ namespace TestApp
 
 
 
-        public static IList<Products> GetAllProducts()
+        public static List<Products> GetAllProducts()
         {
             return new List<Products>
         {
@@ -82,7 +82,7 @@ namespace TestApp
         };
         }
 
-        public static IList<Products> GetElectronicsProducts()
+        public static List<Products> GetElectronicsProducts()
         {
             return new List<Products>
         {
@@ -110,7 +110,7 @@ namespace TestApp
         };
         }
 
-        public static IList<Products> GetFoodProducts()
+        public static List<Products> GetFoodProducts()
         {
             return new List<Products>
         {
@@ -135,7 +135,7 @@ namespace TestApp
         };
         }
 
-        public static IList<Products> GetClothesProducts()
+        public static List<Products> GetClothesProducts()
         {
             return new List<Products>
         {

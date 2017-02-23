@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,10 @@ namespace TestApp
 {
     public partial class ItemsPage : ContentPage
     {
-        private static IList<Products> returned_products_list;
+        private static List<Products> returned_products_list;
 
-        private static IList<string> purchasedList= new List<string>(100);
-        private static IList<string> itemPrice = new List<string>(100);
+        private static List<Products> purchasedList= new List<Products>(100);
+
         private static int total =0;
         private int i = 0;
         public ItemsPage()
@@ -51,24 +52,24 @@ namespace TestApp
         {
             for (int j = 0; j < purchasedList.Count; j++)
             {
-                purchasedList[j]= " ";
-                itemPrice [j] = " ";
+                purchasedList[j]= null;
+         
                 total = 0;
             }
             
 
         }
 
-        public static IList<String> getpurchaseditems()
+        public static List<Products> getpurchaseditems()
         {
 
             return purchasedList;
         }
-        public static IList<String> getitemPrice()
-        {
+        //public static IList<String> getitemPrice()
+        //{
 
-            return itemPrice;
-        }
+        //    return itemPrice;
+        //}
         public static int getTotal()
         {
 
@@ -80,8 +81,8 @@ namespace TestApp
             await DisplayAlert("Selected", ((Products)(e.SelectedItem)).Name + " was selected.", "OK");
             if (i>=0)
             {
-                purchasedList.Insert(i,((Products)(e.SelectedItem)).Name); 
-                itemPrice.Insert(i, ((((Products) (e.SelectedItem)).Price)).ToString()) ;
+                purchasedList.Insert(i,(Products)(e.SelectedItem)); 
+              
                 total = total + ((Products) (e.SelectedItem)).Price;
 
             }
@@ -91,7 +92,14 @@ namespace TestApp
 
         private void CheckOutBtn_OnClicked(object sender, EventArgs e)
         {
-             Navigation.PushModalAsync(new ChekOutPage());
+             Navigation.PushAsync(new ChekOutPage());
+        }
+
+        private void ItemsSearchBar_OnSearchButtonPressed(object sender, EventArgs e)
+        {
+            string keyword = itemsSearchBar.Text;
+         IEnumerable <Products>  searchResult= (returned_products_list).Where(l => l.Name.Contains(keyword));
+            lstView.ItemsSource = searchResult;
         }
     }
 }

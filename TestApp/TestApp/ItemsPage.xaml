@@ -6,6 +6,8 @@
   Title = "Products ListView ">
 
   <StackLayout Orientation="Vertical" Padding="30,30,20,20">
+    <SearchBar x:Name="itemsSearchBar" SearchButtonPressed="ItemsSearchBar_OnSearchButtonPressed" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"/>
+    
     <ListView x:Name="lstView" RowHeight="60" HasUnevenRows="True"  ItemSelected="LstView_OnItemSelected" >
       <ListView.ItemTemplate  >
         <DataTemplate >

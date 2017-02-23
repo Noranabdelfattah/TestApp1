@@ -1,18 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TestApp.ChekOutPage">
+             x:Class="TestApp.ChekOutPage"
+             Title="ChekOut Page">
 
-  <StackLayout Padding="40,20,20,20" VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+  <StackLayout Padding="10,10,10,10" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20" BackgroundColor="Gray" >
 
     <Grid Padding="40,20,20,20" ColumnSpacing="10" RowSpacing="20" BackgroundColor="White"
-      HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+      HorizontalOptions="Start" VerticalOptions="Start" >
       <Grid.RowDefinitions>
         <RowDefinition Height="auto"/>
-        <RowDefinition Height="auto"/>
-        <RowDefinition Height="auto"/>
-        <RowDefinition Height="auto"/>
-        <RowDefinition Height="auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
         <RowDefinition Height="auto"/>
   
       </Grid.RowDefinitions>
@@ -40,36 +44,42 @@
          Grid.Row="1" Grid.RowSpan="3"
          BackgroundColor="White" TextColor="Black"
          ></Label>-->
+  
 
-      <ListView x:Name="itemsNAme_lbl"   Grid.Column="0"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-           Grid.Row="1" Grid.RowSpan="3" >
-        <!--<ListView.ItemTemplate  >
+      <ListView x:Name="itemsNAme_lbl"   Grid.Column="0"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" 
+           Grid.Row="1" Grid.RowSpan="6" Grid.ColumnSpan="2"  >
+        <ListView.ItemTemplate  >
           <DataTemplate >
             <ViewCell>
-              <StackLayout Orientation="Vertical" >
-                --><!--<Label Text = "{Binding purchased}" FontSize="16" TextColor="Maroon" FontAttributes="Bold"  />--><!--
-              </StackLayout>
+              <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" ColumnSpacing="20">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                 
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text = "{Binding Name}" FontSize="16" TextColor="Maroon" FontAttributes="Bold" XAlign="Start" Grid.Row="0"  Grid.Column="0" />
+                <Label Text = "{Binding Price}" FontSize="16" TextColor="Maroon" FontAttributes="Bold" XAlign="End"  Grid.Row="0"  Grid.Column="1" />
+              </Grid>
             </ViewCell>
           </DataTemplate>
-        </ListView.ItemTemplate>-->
+        </ListView.ItemTemplate>
       </ListView>
       
-<ListView x:Name="itemsPrice_lbl"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-        Grid.Column="1"
-         Grid.Row="1" Grid.RowSpan="3"
-         
-  
-  ></ListView>
 
-      <Label x:Name="total_lb" Grid.Column="0" Grid.Row="4" Text="Total : " 
+
+      <Label x:Name="total_lb" Grid.Column="0" Grid.Row="7" Text="Total : " 
              FontAttributes="Bold"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
            BackgroundColor="White" TextColor="Black"
         ></Label>
-      <Label x:Name="totalValue_lbl" Grid.Column="1" Grid.Row="4"  HorizontalOptions="CenterAndExpand"
-              BackgroundColor="White" TextColor="Black"></Label>
+      <Label x:Name="totalValue_lbl" Grid.Column="1" Grid.Row="7"  HorizontalOptions="CenterAndExpand"
+              BackgroundColor="White" TextColor="Black" FontAttributes="Bold"></Label>
 
       <Label x:Name="CashierName_lbl"  HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"
-            Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="5"
+            Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="8"
         BackgroundColor="White" TextColor="Black" FontAttributes="Bold"></Label>
 
     </Grid>
@@ -81,7 +91,7 @@
             BackgroundColor="Orange"
             HorizontalOptions="End"
             VerticalOptions="End"
-            />
+            IsVisible="True"/>
 
   </StackLayout>
 </ContentPage>

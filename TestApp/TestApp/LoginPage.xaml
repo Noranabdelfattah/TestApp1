@@ -3,14 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TestApp.LoginPage"
              Title="Login Page">
- <StackLayout Padding="40,40,40,40" VerticalOptions="Center">
-   
-   <Label>Enter Your Login Name </Label>
-   <Entry x:Name="NameEntry"
+
+
+  <StackLayout Padding="25,40,40,40" VerticalOptions="Center" Spacing="10">
+
+    <Label>Enter Your Login Name </Label>
+    <Entry x:Name="NameEntry"
      ></Entry>
-   <Label> Password </Label>
-   <Entry x:Name="PassEntry"
+
+    <Label> Password </Label>
+    <Entry x:Name="PassEntry"  IsPassword="True"
      ></Entry>
-   <Button Text="Sign In" TextColor="Black" BackgroundColor="White" Clicked="SignIn_btn"></Button>
- </StackLayout>
+    <Button Text="Sign In" TextColor="Black" BackgroundColor="White" Clicked="SignIn_btn"></Button>
+  </StackLayout>
 </ContentPage>

@@ -23,7 +23,7 @@ namespace TestApp
 
         private async void POS_btn_Click(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new MenuPage());
+            await Navigation.PushAsync(new MenuPage());
         }
 
         private async void BtnRegCustomer_OnClicked(object sender, EventArgs e)
