@@ -12,7 +12,6 @@ namespace TestApp
         public LoginPage()
         {
             InitializeComponent();
-
         }
 
         public void SetLoginName(string x)

@@ -30,7 +30,6 @@
                 Grid.Column="0" Grid.ColumnSpan="2"
                Grid.Row="0"
             BackgroundColor="White" TextColor="Black" FontAttributes="Bold"></Label>
-
       <!--<Label x:Name="itemsNAme_lbl"
        HorizontalOptions="CenterAndExpand" 
        VerticalOptions="CenterAndExpand"
@@ -45,7 +44,6 @@
          BackgroundColor="White" TextColor="Black"
          ></Label>-->
   
-
       <ListView x:Name="itemsNAme_lbl"   Grid.Column="0"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" 
            Grid.Row="1" Grid.RowSpan="6" Grid.ColumnSpan="2"  >
         <ListView.ItemTemplate  >
@@ -69,8 +67,6 @@
         </ListView.ItemTemplate>
       </ListView>
       
-
-
       <Label x:Name="total_lb" Grid.Column="0" Grid.Row="7" Text="Total : " 
              FontAttributes="Bold"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
            BackgroundColor="White" TextColor="Black"
