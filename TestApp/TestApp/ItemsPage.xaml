@@ -15,6 +15,7 @@
             <StackLayout Orientation="Vertical" >
               <Label Text = "{Binding Name}" FontSize="16" TextColor="Maroon" FontAttributes="Bold"  />
               <Label Text = " {Binding Price}" FontSize="14" TextColor="Blue" />
+              <Image Source="{Binding Image}" Aspect="AspectFit"  ></Image>
             </StackLayout>
           </ViewCell>
         </DataTemplate>

@@ -2,20 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TestApp.LoginPage"
-             Title="Login Page">
+             Title="Login Page"
+  BackgroundImage="onlinshopping.jpg" >
 
 
-  <StackLayout Padding="25,40,40,40" VerticalOptions="Center" Spacing="10">
+  <StackLayout Padding="25,40,40,40" VerticalOptions="Start" Spacing="10">
 
-    <Image Source="onlinshopping.jpg" Aspect="AspectFit" HeightRequest="100" WidthRequest="200"  x:Name="Image1"/>
+    <!--<Image Source="onlinshopping.jpg" Aspect="AspectFit" HeightRequest="100" WidthRequest="200"  x:Name="Image1"/>-->
     
-    <Label>Enter Your Login Name </Label>
+    <Label Text="Enter Your Login Name" TextColor="Black" FontAttributes="Bold"> </Label>
     <Entry x:Name="NameEntry"
+           TextColor="Red" FontAttributes="Bold" BackgroundColor="Silver"
      ></Entry>
 
-    <Label> Password </Label>
+    <Label Text="Password" TextColor="Black" FontAttributes="Bold">  </Label>
     <Entry x:Name="PassEntry"  IsPassword="True"
+               TextColor="Red" FontAttributes="Bold" BackgroundColor="Silver"
      ></Entry>
-    <Button Text="Sign In" TextColor="Black" BackgroundColor="White" Clicked="SignIn_btn"></Button>
+    <Button Text="Sign In" TextColor="Orange"
+  FontSize="16" FontAttributes="Bold" FontFamily="Verdana"
+  BackgroundColor="Blue" Clicked="SignIn_btn"></Button>
   </StackLayout>
 </ContentPage>
